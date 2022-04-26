@@ -117,6 +117,7 @@ public class App
 			        	
 					}else {
 						country_fitted = place_string;
+						
 						if (country_fitted.equals(place)) {
 			        		
 			        		element_attributes.put("Country", country_fitted);
