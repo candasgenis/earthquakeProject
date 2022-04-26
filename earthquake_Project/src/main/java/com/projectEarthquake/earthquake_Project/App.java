@@ -28,7 +28,7 @@ public class App
 		    
 		    System.out.println("Enter the Days: ");
 		    int day = myScanner.nextInt();  
-		    System.out.println("Days are: " + day);
+		    System.out.println("Entered days are: " + day);
 		    
 		    ArrayList<HashMap<String, String>> return_of_getearthquake = getEarthquake(place_fitted, day);
 		    
