@@ -24,11 +24,11 @@ public class App
 			System.out.println("Enter the Country: ");
 		    String place = myScanner.nextLine().trim().toLowerCase();
 		    String place_fitted = place.substring(0, 1).toUpperCase() + place.substring(1);
-		    System.out.println("Country is: " + place_fitted);
+		    System.out.println("Given Country: " + place_fitted);
 		    
 		    System.out.println("Enter the Days: ");
 		    int day = myScanner.nextInt();  
-		    System.out.println("Entered days are: " + day);
+		    System.out.println("Given Day(s): " + day);
 		    
 		    ArrayList<HashMap<String, String>> return_of_getearthquake = getEarthquake(place_fitted, day);
 		    
