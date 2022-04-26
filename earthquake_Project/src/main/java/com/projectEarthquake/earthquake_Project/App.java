@@ -33,7 +33,7 @@ public class App
 		    ArrayList<HashMap<String, String>> return_of_getearthquake = getEarthquake(place_fitted, day);
 		    
 		    if (return_of_getearthquake == null) {
-		    	System.out.println("Something went wrong. (Check the days entered again)");
+		    	System.out.println("Something went wrong. (Check the days entered again, you may try to minimize it)");
 			} else if(return_of_getearthquake.isEmpty()){
 				System.out.println("Something went wrong. (You either entered an unknown place or there is no earthquakes were recorded past "+ day + " day(s))");
 			}else {
