@@ -19,17 +19,19 @@ public class App
 {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
-		
 		while (true) {
 			Scanner myScanner = new Scanner(System.in);  
 			System.out.println("Enter the Country: ");
 		    String place = myScanner.nextLine().trim().toLowerCase();
 		    String place_fitted = place.substring(0, 1).toUpperCase() + place.substring(1);
-		    System.out.println("Country is: " + place_fitted); 
+		    System.out.println("Country is: " + place_fitted);
+		    
 		    System.out.println("Enter the Days: ");
 		    int day = myScanner.nextInt();  
 		    System.out.println("Days are: " + day);
+		    
 		    ArrayList<HashMap<String, String>> return_of_getearthquake = getEarthquake(place_fitted, day);
+		    
 		    if (return_of_getearthquake == null) {
 		    	System.out.println("Something went wrong. (Check the days entered again)");
 			} else if(return_of_getearthquake.isEmpty()){
@@ -61,10 +63,12 @@ public class App
 			String url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=" + starttime;
 			
 			HttpClient client = HttpClient.newHttpClient();
+			
 			HttpRequest request = HttpRequest.newBuilder()
 					  .uri(new URI(url))
 					  .GET()
 					  .build();
+			
 			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 			
 			if (response.statusCode() == 400) {
@@ -86,9 +90,11 @@ public class App
 			        
 			        	region = place_string.substring(0, comma_index);
 			        	trimmed_region = region.trim();
+			        	
 			        	country = place_string.substring(comma_index + 1);
 			        	trimmed_country = country.trim();
 			        	trimmed_country = trimmed_country.toLowerCase();
+			        	
 			        	country_fitted = trimmed_country.substring(0, 1).toUpperCase() + trimmed_country.substring(1);
 			        	//System.out.println(country_fitted);
 			        	
